@@ -3,7 +3,18 @@ int main()
 {
     int j=0,n,i,x;
     printf("Enter the number of elements:");
-    scanf("%d",&n);
+    while(1>0)
+    {
+        scanf("%d",&n);
+        if(n<=0)
+        {
+            printf("Enter a valid number of elements:");
+        }
+        else
+        {
+            break;
+        }
+    }
     int a[n];
     int *p=a;
     for (i=0;i<n;i++)

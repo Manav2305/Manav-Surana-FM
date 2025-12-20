@@ -1,27 +1,33 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-#include<time.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <time.h>
+
 int main()
 {
-    int i,j,v=0,c=0;
+    int i, j, v = 0, c = 0;
     char a[100];
-    printf("Enter the string:");
-    scanf("%s",a);
-    int l=strlen(a);
-    for(i=0;i<l;i++)
+    printf("Enter the string: ");
+    fgets(a, sizeof(a), stdin);
+    a[strcspn(a, "\n")] = '\0';
+    int l = strlen(a);
+    for(i = 0; i < l; i++)
     {
-        if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u')
+        if(isalpha(a[i]))
         {
-            v++;
-        }
-        else
-        {
-            c++;
+            char b= tolower(a[i]);
+            if(b=='a'||b=='e'||b=='i'||b=='o'||b=='u')
+            {
+                v++;
+            }
+            else
+            {
+                c++;
+            }    
         }
     }
-    printf("Vowels:%d\nConsonants:%d",v,c);
-    
+    printf("Vowels: %d\nConsonants: %d\n", v, c);
     //scrambling the string
     srand(time(NULL));
     for(j=0;j<l;j++)

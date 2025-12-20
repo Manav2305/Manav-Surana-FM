@@ -1,7 +1,9 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {
-    int a,x=0,y,i,j;
+    int a,x=0,y=2,i,j,z;        //y=2 beacuse we are assuming the sum to be prime initially becuase if the square root
+                                // of the sum is less than 2, then the for loop(line 28) does not execute
     for(i=1;i<=3;i++)
     {
         printf("Enter number:\n");
@@ -17,32 +19,31 @@ int main()
     {
         printf("The sum is odd\n");
     }
-    for(j=2;j<=x;j++)
+    if(x<=1)
     {
-        if(x<=1)
+        y=0;
+    }
+    else
+    {
+        z=sqrt(x);
+        for(j=2;j<=z;j++)
         {
-            y=0;
-            break;
-        }
-        if(x%j==0)
-        {
-            y=1;
-            break;
-        }
-        else
-        {
-            y=2;
+            if(x%j==0)
+            {
+                y=1;
+                break;
+            }
         }
     }
     if(y==0)
     {
         printf("Neither prime nor composite\n");
     }
-    if(y==1)
+    else if(y==1)
     {
         printf("Sum is Composite\n");
     }
-    if(y==2)
+    else
     {
         printf("Sum is Prime\n");
     }

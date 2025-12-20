@@ -16,7 +16,7 @@ int main()
         }
     }
     char a[n];
-    int*p=a;
+    int *p=a;
     printf("Enter %d elements:",n);
     for(int i=0;i<n;i++)
     {
