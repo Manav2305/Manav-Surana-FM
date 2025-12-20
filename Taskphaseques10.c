@@ -2,10 +2,32 @@
 int main()
 {
     int r,c;
-    printf("Enter number of rows:");
-    scanf("%d",&r);
-    printf("Enter number of columns:");
-    scanf("%d",&c);
+    while(1>0)
+    {
+        printf("Enter number of rows:");
+        scanf("%d",&r);
+        if(r<0)
+        {
+            printf("Enter a valid number of rows\n");
+        }
+        else
+        {
+            break;
+        }
+    }
+    while(1>0)
+    {
+        printf("Enter number of columns:");
+        scanf("%d",&c);
+        if(c<0)
+        {
+            printf("Enter a valid number of columns\n");
+        }
+        else
+        {
+            break;
+        }
+    }
     int m[r][c];
     int i,j;
     for(i=0;i<r;i++)
